@@ -33,9 +33,21 @@ export default defineConfig({
                       text:'掘金文章',link: '/frontend/jueJin/'
                     },
                 ]
+               },
+               {
+                text:'JavaScript',
+                collapsible:true,
+                collapsed:false,
+                items:[
+                    {
+                      text:'apply、call、bind',link: '/frontend/JavaScript/apply_call_bind'
+                    },
+                    
+                ]
                }
               
-            ]
+            ],
+
                
             
          },
