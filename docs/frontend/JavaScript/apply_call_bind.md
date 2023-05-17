@@ -5,7 +5,7 @@
 4. bind 方法不能调用函数，他会创建一个副本函数，并且绑定函数的this指向bind返回新的函数<br>
 
 ## apply
-```js
+```typescript
 Function.prototype._apply = function (target, args) {
   target = target || window;
   const key = Symbol();
@@ -17,7 +17,7 @@ Function.prototype._apply = function (target, args) {
 ```
 
 ## call
-```js
+```typescript
 Function.prototype._call = function (target, ...args) {
   target = target || window;
   const key = Symbol();
@@ -29,7 +29,7 @@ Function.prototype._call = function (target, ...args) {
 ```
 
 ## bind
-```js
+```typescript
 Function.prototype._bind = function (target, ...args) {
   target = target || window;
   const key = Symbol();

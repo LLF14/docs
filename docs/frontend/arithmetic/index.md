@@ -3,7 +3,7 @@
 
 <img src="https://limy-1309594960.cos.ap-beijing.myqcloud.com/202209261914597.gif" data-fancybox="gallery"/>
 
-```js
+```typescript
 function bubbleSort(arr) {
   // 外层，需要遍历的次数
   for (let i = 1; i < arr.length; i++) {
@@ -20,7 +20,7 @@ function bubbleSort(arr) {
 原理：为当前元素保存一个副本，依次向前遍历前面的元素是否比自己大，如果比自己大就直接把前一个元素赋值到当前元素的位置，当前某位置的元素不再比当前元素大的时候，将当前元素的值赋值到这个位置。
 <img src="https://limy-1309594960.cos.ap-beijing.myqcloud.com/202209261915251.gif" data-fancybox="gallery"/>
 
-```js
+```typescript
 Array.prototype.insertionSort = function () {
   const arr = this;
   let pre, curVal;
@@ -36,7 +36,7 @@ Array.prototype.insertionSort = function () {
   console.log(arr);
 };
 ```
-```js
+```typescript
 function insertSort(arr) {
   for (let i = 1; i < arr.length; i++) {
     let j,
@@ -54,7 +54,7 @@ function insertSort(arr) {
 1．先从数列中取出一个数作为基准数。<br>
 2．分区过程，将比这个数大的数全放到它的右边，小于或等于它的数全放到它的左边。<br>
 3．再对左右区间重复第二步，直到各区间只有一个数。<br>
-```js
+```typescript
 function swap(nums, p, q) {
   const temp = nums[p]
   nums[p] = nums[q]
@@ -82,7 +82,7 @@ function randomQuickSort(arr,l,r) {
 ## 堆排序
 <img src="https://limy-1309594960.cos.ap-beijing.myqcloud.com/202209261913319.gif" data-fancybox="gallery"/>
 
-```js
+```typescript
 Array.prototype.heapSort = function () {
   const arr = this;
   let len = arr.length;
@@ -131,7 +131,7 @@ Array.prototype.heapSort = function () {
 ## 归并合并
 <img src="https://limy-1309594960.cos.ap-beijing.myqcloud.com/202209261915136.gif" data-fancybox="gallery"/>
 
-```js
+```typescript
 Array.prototype.mergeSort = function () {
   const arr = this;
   function split(arr) {
@@ -172,7 +172,7 @@ Array.prototype.mergeSort = function () {
 ## 选择排序
 <img src="https://limy-1309594960.cos.ap-beijing.myqcloud.com/202209261914614.gif" data-fancybox="gallery"/>
 
-```js
+```typescript
 Array.prototype.selectionSort = function () {
   const arr = this;
   for (let i = 0; i < arr.length; i++) {

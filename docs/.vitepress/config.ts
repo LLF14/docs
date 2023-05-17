@@ -12,14 +12,17 @@ export default defineConfig({
         theme: 'material-palenight',
         lineNumbers: true
       },
+      
       themeConfig: {
         logo: 'https://img1.baidu.com/it/u=1603808805,3557228353&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=300',
+        
         nav: [
             {text:'首页',link:'/'},
             {text:'摸鱼',link:'/frontend/'},
             {text:'关于',link:'/user/'},
         ],
         sidebar: { 
+          
             '/frontend/':[
                {
                 text:'开始摸鱼',
@@ -35,7 +38,7 @@ export default defineConfig({
                 ]
                },
                {
-                text:'JavaScript',
+                text:'javaScript',
                 collapsible:true,
                 collapsed:false,
                 items:[
@@ -44,9 +47,31 @@ export default defineConfig({
                     },
                     
                 ]
-               }
-              
+               },
+               {
+                text:'typeScript',
+                collapsible:true,
+                collapsed:false,
+                items:[
+                    {
+                      text:'类型',link: '/frontend/typeScript/类型'
+                    },
+                    
+                ]
+               },
+               {
+                text:'Vue',
+                collapsible:true,
+                collapsed:false,
+                items:[
+                    {
+                      text:'Pinia',link: '/frontend/Vue/Pinia'
+                    },
+                    
+                ]
+               },
             ],
+            
 
                
             
