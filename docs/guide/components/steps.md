@@ -5,7 +5,7 @@ import { shallowRef, onMounted } from 'vue'
 import { ref, watchEffect } from 'vue'  
 const mapComponent = shallowRef(null)
 onMounted(()=>{
-     import('../../../packages/steps/steps.vue').then(module => {
+     import('../../../packages/steps/Steps.vue').then(module => {
       mapComponent.value = module.default
     })
     
@@ -99,8 +99,8 @@ const current = ref(2)
 
 <br/>
 
-<!-- <button @click="onPrevious()" class="btn" style="width:''">Back(返回)</button><br>
-<button @click="onNext()">Next(下一步)</button> -->
+<button @click="onPrevious()" class="btn" style="width:''">Back(返回)</button><br>
+<button @click="onNext()">Next(下一步)</button>
 
 ::: details Show Code
 
