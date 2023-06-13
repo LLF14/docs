@@ -12,7 +12,7 @@ onMounted(()=>{
     // import('./sunComponent.vue').then(module => {
     //   mapComponent.value = module.default
     // })
-     import('../../../packages/textscroll/Textscroll.vue').then(module => {
+     import('../../../packages/textscroll/TextScroll.vue').then(module => {
       mapComponent.value = module.default
     })
     
@@ -35,7 +35,7 @@ const sliderText = ref([
         title: '愤怒与焦虑是此书的两大主题，主人公的经历和思想在青少年中引起强烈共鸣'
       }
     ])
-function onClick (value: string) { // 获取点击的标题
+const onClick= (value: string)=> { // 获取点击的标题
   console.log('value:', value)
 }
 </script>
