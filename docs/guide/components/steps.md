@@ -4,9 +4,6 @@
   import { shallowRef, onMounted } from 'vue'    
 const mapComponent = shallowRef(null)
 onMounted(()=>{
-    // import('./sunComponent.vue').then(module => {
-    //   mapComponent.value = module.default
-    // })
      import('../../../packages/steps/steps.vue').then(module => {
       mapComponent.value = module.default
     })
@@ -101,8 +98,8 @@ const current = ref(2)
 
 <br/>
 
-<Button @click="onPrevious()" class="mt30 mr30">Previous</Button>
-<Button @click="onNext()">Next</Button>
+<button @click="onPrevious()" class="btn" style="width:''">Back(返回)</button><br>
+<button @click="onNext()">Next(下一步)</button>
 
 ::: details Show Code
 
@@ -144,8 +141,8 @@ const onNext= ()=> {
 </script>
 <template>
   <Steps :steps="steps" v-model:current="current" @change="onChange" />
-  <Button @click="onPrevious()" class="mt30 mr30">Previous</Button>
-  <Button @click="onNext()">Next</Button>
+  <button @click="onPrevious()" class="mt30 mr30">Back(返回)</button>
+  <button @click="onNext()">Next(下一步)</button>
 </template>
 ```
 

@@ -111,7 +111,7 @@ export default defineConfig({
                     text:'步骤条 Steps',link: '/guide/components/steps'
                   },
                   {
-                    text:'文字滚动 TextScroll',link: '/guide/components/textScroll'
+                    text:'文字滚动 TextScroll',link: '/guide/components/textscroll'
                   },
                ]
               },
