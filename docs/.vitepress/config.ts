@@ -19,7 +19,9 @@ export default defineConfig({
         nav: [
             {text:'首页',link:'/'},
             {text:'摸鱼',link:'/frontend/'},
-            {text:'关于',link:'/user/'},
+            {text:'组件库',link:'/guide/index'},
+            {text:'关于',link:'/user/index'},
+           
         ],
         sidebar: { 
           
@@ -43,8 +45,12 @@ export default defineConfig({
                 collapsed:false,
                 items:[
                     {
-                      text:'apply、call、bind',link: '/frontend/JavaScript/apply_call_bind'
+                      text:'apply、call、bind',link: '/frontend/javaScript/apply_call_bind'
                     },
+                    {
+                      text:'Promise',link: '/frontend/javaScript/Promise'
+                    },
+                   
                     
                 ]
                },
@@ -65,12 +71,53 @@ export default defineConfig({
                 collapsed:false,
                 items:[
                     {
+                      text:'nextTick',link: '/frontend/Vue/nextTick'
+                    },
+                    {
                       text:'Pinia',link: '/frontend/Vue/Pinia'
                     },
                     
+                    
                 ]
                },
+               {
+                text:'浏览器',
+                collapsible:true,
+                collapsed:false,
+                items:[
+                    {
+                      text:'事件循环 EventLoop',link: '/frontend/Web/事件循环'
+                    },  
+                ]
+               },
+              
             ],
+            '/guide/':[
+              {
+               text:'组件库',
+               collapsible:true,
+               collapsed:false,
+               items:[
+                    {
+                      text:'加载动画 Spin',link: '/guide/components/spin'
+                    },
+                   {
+                     text:'折叠面板 Collapse',link: '/guide/components/collapse'
+                   },
+                   {
+                     text:'走马灯 Carousel',link: '/guide/components/carousel'
+                   },
+                   {
+                    text:'步骤条 Steps',link: '/guide/components/steps'
+                  },
+                  {
+                    text:'文字滚动 TextScroll',link: '/guide/components/textScroll'
+                  },
+               ]
+              },
+              
+             
+           ],
             
 
                

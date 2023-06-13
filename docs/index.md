@@ -10,14 +10,18 @@ hero:
     alt: '14'
   actions:
     - theme: brand
-      text: 开始
+      text: 摸鱼
       link: /frontend/
     - theme: alt
-      text: 访问我的GitHub
-      link: https://github.com/LLF14
+      text: 组件库
+      link: /guide/
     - theme: alt
       text: 关于作者
       link: /user/
+    # - theme: alt
+    #   text: 访问我的GitHub
+    #   link: https://github.com/LLF14
+    
     
 
 

@@ -16,5 +16,10 @@
   "dependencies": {
     "vitepress": "^1.0.0-alpha.35",
     "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "less": "^4.1.3",
+    "less-loader": "^11.1.3",
+    "typescript": "^5.1.3"
   }
 }
