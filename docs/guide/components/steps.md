@@ -1,7 +1,8 @@
 # 步骤条 Steps
 
 <script setup lang="ts">
-  import { shallowRef, onMounted } from 'vue'    
+import { shallowRef, onMounted } from 'vue'  
+import { ref, watchEffect } from 'vue'  
 const mapComponent = shallowRef(null)
 onMounted(()=>{
      import('../../../packages/steps/steps.vue').then(module => {
@@ -9,7 +10,7 @@ onMounted(()=>{
     })
     
 })
-import { ref, watchEffect } from 'vue'
+
 const steps = ref([
   {
     title: 'Step 1',
@@ -98,8 +99,8 @@ const current = ref(2)
 
 <br/>
 
-<button @click="onPrevious()" class="btn" style="width:''">Back(返回)</button><br>
-<button @click="onNext()">Next(下一步)</button>
+<!-- <button @click="onPrevious()" class="btn" style="width:''">Back(返回)</button><br>
+<button @click="onNext()">Next(下一步)</button> -->
 
 ::: details Show Code
 
