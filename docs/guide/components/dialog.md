@@ -35,32 +35,32 @@ const footer = ref(false)
 const loading = ref(false)
 const title = ref('Dialog Title')
 const content = ref('Content of the modal ...')
-function showDialog () {
+const showDialog =() =>{
   visible1.value = true
 }
-function showCustomHeightDialog () {
+const showCustomHeightDialog= () =>{
   visible2.value = true
 }
-function showFooterDialog () {
+const showFooterDialog =() =>{
   visible3.value = true
 }
-function showFixPositionDialog () {
+const showFixPositionDialog =() =>{
   visible4.value = true
 }
-function showFullScreenDialog () {
+const showFullScreenDialog =()=> {
   visible5.value = true
 }
-function onClose () { // 关闭回调
+const onClose= () =>{ // 关闭回调
   visible1.value = false
   visible2.value = false
   visible3.value = false
   visible4.value = false
   visible5.value = false
 }
-function onCancel () { // “取消”按钮回调
+const onCancel= ()=> { // “取消”按钮回调
   visible3.value = false
 }
-function onConfirm () { // “确定”,“知道了”按钮回调
+const onConfirm =() =>{ // “确定”,“知道了”按钮回调
   loading.value = true // 开启加载状态
   setTimeout(() => {
     visible3.value = false
@@ -85,10 +85,10 @@ function onConfirm () { // “确定”,“知道了”按钮回调
 <script setup lang="ts">
 import { ref } from 'vue'
 const visible = ref(false)
-function showDialog () {
+const showDialog= ()=> {
   visible.value = true
 }
-function onClose () {
+const onClose= ()=> {
   visible.value = false
 }
 </script>
@@ -124,10 +124,10 @@ function onClose () {
 <script setup lang="ts">
 import { ref } from 'vue'
 const visible = ref(false)
-function showCustomHeightDialog (info: string) {
+const showCustomHeightDialog = (info: string)=> {
   visible.value = true
 }
-function onClose () {
+const onClose = ()=> {
   visible.value = false
 }
 </script>
@@ -170,16 +170,16 @@ function onClose () {
 import { ref } from 'vue'
 const visible = ref(false)
 const loading = ref(false)
-function showFooterDialog () {
+const showFooterDialog= ()=> {
   visible.value = true
 }
-function onClose () {
+const onClose =()=> {
   visible.value = false
 }
-function onCancel () { // “取消”按钮回调
+const onCancel = ()=> { // “取消”按钮回调
   visible.value = false
 }
-function onConfirm () { // “确定”按钮回调
+const onConfirm =() =>{ // “确定”按钮回调
   loading.value = true // 开启加载状态
   setTimeout(() => {
     visible.value = false
@@ -226,10 +226,10 @@ function onConfirm () { // “确定”按钮回调
 <script setup lang="ts">
 import { ref } from 'vue'
 const visible = ref(false)
-function showFixPositionDialog () {
+const showFixPositionDialog= ()=> {
   visible.value = true
 }
-function onClose () {
+const onClose= ()=> {
   visible.value = false
 }
 </script>
@@ -269,10 +269,10 @@ function onClose () {
 <script setup lang="ts">
 import { ref } from 'vue'
 const visible = ref(false)
-function showFullScreenDialog () {
+const showFullScreenDialog= ()=> {
   visible.value = true
 }
-function onClose () {
+const onClose =()=> {
   visible.value = false
 }
 </script>

@@ -10,7 +10,7 @@ export default defineConfig({
     appearance: true,
     markdown: {  //设置代码块主题
         theme: 'material-palenight',
-        lineNumbers: true
+        lineNumbers: false
       },
       
       themeConfig: {
@@ -104,9 +104,9 @@ export default defineConfig({
                    {
                      text:'折叠面板 Collapse',link: '/guide/components/collapse'
                    },
-                   {
-                     text:'走马灯 Carousel',link: '/guide/components/carousel'
-                   },
+                  //  {
+                  //    text:'走马灯 Carousel',link: '/guide/components/carousel'
+                  //  },
                    {
                     text:'步骤条 Steps',link: '/guide/components/steps'
                   },
@@ -119,9 +119,16 @@ export default defineConfig({
                   {
                     text:'开关 Switch',link: '/guide/components/switch'
                   },
+                  // {
+                  //   text:'对话框 Dialog',link: '/guide/components/dialog'
+                  // },
                   {
-                    text:'对话框 Dialog',link: '/guide/components/dialog'
+                    text:'文字提示 Tooltip',link: '/guide/components/tooltip'
                   },
+                  {
+                    text:'进度条 Progress',link: '/guide/components/progress'
+                  },
+                  
                ]
               },
               

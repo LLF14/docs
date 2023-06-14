@@ -2,12 +2,22 @@
 <script setup lang="ts">
   import { shallowRef, onMounted } from 'vue'  
   const mapComponent = shallowRef(null)
+  const switchComponent = shallowRef(null)
 onMounted(()=>{
     // import('./sunComponent.vue').then(module => {
     //   mapComponent.value = module.default
     // })
      import('../../../packages/spin/Spin.vue').then(module => {
       mapComponent.value = module.default
+    })
+    
+})
+onMounted(()=>{
+    // import('./sunComponent.vue').then(module => {
+    //   mapComponent.value = module.default
+    // })
+     import('../../../packages/switch/Switch.vue').then(module => {
+      switchComponent.value = module.default
     })
     
 })
@@ -38,7 +48,7 @@ const spinning = ref(true)
 
 <div class="m-flex">
   <h3 class="u-h3">Loading state: </h3>
-  <!-- <Switch v-model:checked="spinning" /> -->
+  <component v-if="switchComponent" :is="switchComponent" v-model:checked="spinning" />
 </div>
 
 ::: details Show Code
