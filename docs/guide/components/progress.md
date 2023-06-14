@@ -29,7 +29,7 @@ onMounted(()=>{
      import('../../../packages/button/Button.vue').then(module => {
       btnComponent.value = module.default
     })
-     import('../../../packages/switch/switch.vue').then(module => {
+     import('../../../packages/switch/Switch.vue').then(module => {
       switchComponent.value = module.default
     })
 })
