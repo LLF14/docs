@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
+
+import { ref, watchEffect} from 'vue'
 // import { rafTimeout } from '../index'
 interface Collapse {
   key?: string|number // 对应activeKey，如果没有传入key属性，则默认使用数据索引(0,1,2...)绑定
@@ -16,6 +17,7 @@ interface Props {
   textFontSize?: number // 面板内容字体大小，优先级高于fontSize
   showArrow?: boolean // 是否展示面板上的箭头
 }
+
 const props = withDefaults(defineProps<Props>(), {
   collapseData: () => [],
   activeKey: null,
@@ -42,6 +44,8 @@ function dealEmit (value: any) {
   emits('change', value)
 }
 function onClick (key: number|string) {
+
+  
   if (activeJudge(key)) {
     if (Array.isArray(props.activeKey)) {
       const res = (props.activeKey as any[]).filter(actKey => actKey!== key)
@@ -64,28 +68,40 @@ function activeJudge (key: number|string): boolean {
     return props.activeKey === key
   }
 }
+
+const copyMsg=ref(false)
+const copyindex=ref()
 const copyTxt = ref('Copy')
 function onCopy (index: number) {
+  console.log(index)
   navigator.clipboard.writeText(text.value[index].innerText || '').then(() => {
     /* clipboard successfully set */
-    copyTxt.value = 'Copied'
-    // rafTimeout(() => {
-    //   copyTxt.value = 'Copy'
-    // }, 3000)
+    copyTxt.value = 'Copy'
+    copyindex.value=index
+    copyMsg.value=true
+    setTimeout(() => {
+      copyTxt.value = 'Copy'
+      copyMsg.value=false
+    }, 1500)
   }, (err) => {
     /* clipboard write failed */
     copyTxt.value = err
   })
 }
+
 </script>
 <template>
+ 
   <div class="m-collapse">
+    
     <div
       class="m-collapse-item"
       :class="{'u-collapse-item-active': activeJudge(data.key || index)}"
       v-for="(data, index) in collapseData" :key="index">
+     
       <div class="u-collapse-header" @click="onClick(data.key || index)">
         <svg focusable="false" v-if="showArrow" class="u-arrow" data-icon="right" aria-hidden="true" viewBox="64 64 896 896"><path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"></path></svg>
+        <div class="copy_msg" v-if="copyindex==index&&copyMsg" > 复制成功</div>
         <div class="u-header" :class="{ml24: showArrow}" :style="`font-size: ${headerFontSize || fontSize }px;`">
           <slot name="header" :header="data.header" :key="data.key || index">{{ data.header || '--' }}</slot>
         </div>
@@ -94,15 +110,29 @@ function onCopy (index: number) {
         <div class="u-lang">
           <slot name="lang" :lang="lang" :key="data.key || index">{{ lang }}</slot>
         </div>
-        <!-- <button size="small" class="u-copy"  @click="onCopy(index)">{{ copyTxt }}</button> -->
+        <button class="u-copy"   @click="onCopy(index)">{{ copyTxt }}</button>
+       
+        
         <div ref="text" class="u-text" :style="`font-size: ${textFontSize || fontSize}px;`">
-          <slot name="text" :text="data.text" :key="data.key || index">{{ data.text }}</slot>
+          <slot name="text"  :text="data.text" :key="data.key || index">{{ data.text }}</slot>
         </div>
       </div>
     </div>
   </div>
+ 
 </template>
 <style lang="less" scoped>
+.copy_msg{
+  position: absolute;
+  top: 10px;
+  left: 45%;
+  font-weight: bold;
+  width: 100px;;
+  // background-color: #fff;
+  text-align: center;
+  border-radius: 20px;
+}
+
 .m-collapse {
   background-color: rgba(0, 0, 0, 0.02);
   border: 1px solid #d9d9d9;
@@ -163,6 +193,7 @@ function onCopy (index: number) {
         pointer-events: none;
         transition: opacity .3s;
       }
+      
       .u-text {
         padding: 16px;
         color: rgba(0, 0, 0, 0.88);
@@ -177,6 +208,7 @@ function onCopy (index: number) {
         }
         .u-copy {
           opacity: 1;
+          cursor: pointer;  
           pointer-events: auto;
         }
       }

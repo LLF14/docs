@@ -6,8 +6,9 @@ export default defineConfig({
     title: '14 BLOG',
     description: '记录日常摸鱼瞬间~~',
     ignoreDeadLinks: true,
-    lastUpdated: true,
+    lastUpdated: false,
     appearance: true,
+    
     markdown: {  //设置代码块主题
         theme: 'material-palenight',
         lineNumbers: false
@@ -45,13 +46,17 @@ export default defineConfig({
                 collapsed:false,
                 items:[
                     {
+                      text:'var、let、const',link: '/frontend/javaScript/var、let、const'
+                    },
+                    {
                       text:'apply、call、bind',link: '/frontend/javaScript/apply_call_bind'
                     },
                     {
-                      text:'Promise',link: '/frontend/javaScript/Promise'
+                      text:'JS中this指向问题',link: '/frontend/javaScript/this'
                     },
-                   
-                    
+                    {
+                      text:'Promise',link: '/frontend/javaScript/Promise'
+                    },  
                 ]
                },
                {
@@ -87,7 +92,10 @@ export default defineConfig({
                 items:[
                     {
                       text:'事件循环 EventLoop',link: '/frontend/Web/事件循环'
-                    },  
+                    }, 
+                    {
+                      text:'跨域',link: '/frontend/Web/跨域'
+                    },   
                 ]
                },
               

@@ -46,6 +46,8 @@ const step = computed(() => { // 移动参数（120fps: 0.5, 60fps: 1）
 const getFPS = () =>{ // 获取屏幕刷新率
   // @ts-ignore
   const requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame
+  
+  
   var start: any = null
   function timeElapse (timestamp: number) {
     /*
@@ -53,16 +55,22 @@ const getFPS = () =>{ // 获取屏幕刷新率
     */
     if (!start) {
       if (fpsRaf.value > 10) {
+       
+        
         start = timestamp
       }
       fpsRaf.value = requestAnimationFrame(timeElapse)
     } else {
+      
+      
       fps.value = Math.floor(1000 / (timestamp - start))
       console.log('fps', fps.value)
       distance.value = getDistance() // 获取每列文字宽度
       onStart() // 开始滚动
     }
   }
+  
+  
   fpsRaf.value = requestAnimationFrame(timeElapse)
 }
 const getDistance= ():number =>{
@@ -72,10 +80,16 @@ const moveLeft= ()=> {
   if (left.value >= distance.value) {
     textData.value.push(textData.value.shift() as Text) // 将第一条数据放到最后
     left.value = 0
+    
   } else {
+    
+    
     left.value += step.value // 每次移动step（px）
   }
   moveRaf.value = requestAnimationFrame(moveLeft)
+
+ 
+  
 }
 
 const totalWidth = computed(() => { // 文字滚动区域总宽度

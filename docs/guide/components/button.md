@@ -20,8 +20,6 @@ onMounted(()=>{
      import('../../../packages/button/Button.vue').then(module => {
       mapComponent.value = module.default
     })
-  
-    
 })
 onMounted(()=>{
     // import('./sunComponent.vue').then(module => {

@@ -24,8 +24,7 @@ const collapseData = ref([
   {
     key: '2',
     header: 'This is panel header 2',
-    text: `  A dog is a type of domesticated animal.Known for its loyalty and faithfulness,it can be found as a welcome guest in many households across the world.
-  A dog is a type of domesticated animal.Known for its loyalty and faithfulness,it can be found as a welcome guest in many households across the world.`
+    text: ` 暂无内容~~`
   },
   {
     key: '3',
@@ -41,7 +40,7 @@ const key = ref('1')
 watchEffect(() => {
   console.log('key:', key.value)
 })
-function onChange (key: any) {
+const onChange =(key: any)=> {
   console.log('change:', key)
 }
 </script>
@@ -65,7 +64,7 @@ function onChange (key: any) {
 
 <br/>
 
-<component v-if="mapComponent" :is="mapComponent" :collapse-data="collapseData" v-model:active-key="activeKey" ></component>
+<component v-if="mapComponent" :is="mapComponent" :collapse-data="collapseData" v-model:active-key="activeKey" :copyable="true" ></component>
 
 ::: details Show Code
 
