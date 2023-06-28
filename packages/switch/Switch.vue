@@ -20,7 +20,7 @@ watch(
   }
 )
 const emit = defineEmits(['update:checked', 'change'])
-function onSwitch () {
+const onSwitch=()=>{
   emit('update:checked', !checked.value)
   emit('change', !checked.value)
 }

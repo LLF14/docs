@@ -1,0 +1,16 @@
+{
+  "id": "4139311",
+  "name": "123",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "21109197",
+      "name": "Star Unselected",
+      "font_class": "StarUnselected",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    }
+  ]
+}

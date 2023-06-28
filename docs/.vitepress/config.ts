@@ -46,7 +46,7 @@ export default defineConfig({
                 collapsed:false,
                 items:[
                     {
-                      text:'var、let、const',link: '/frontend/javaScript/var、let、const'
+                      text:'var、let、const',link: '/frontend/javaScript/var_let_const'
                     },
                     {
                       text:'apply、call、bind',link: '/frontend/javaScript/apply_call_bind'
@@ -107,6 +107,12 @@ export default defineConfig({
                collapsed:false,
                items:[
                     {
+                      text:'下拉菜单 selector',link: '/guide/components/selector'
+                    },
+                    {
+                      text:'评分 Star',link: '/guide/components/star'
+                    },
+                    {
                       text:'加载动画 Spin',link: '/guide/components/spin'
                     },
                    {
@@ -118,9 +124,9 @@ export default defineConfig({
                    {
                     text:'步骤条 Steps',link: '/guide/components/steps'
                   },
-                  {
-                    text:'文字滚动 TextScroll',link: '/guide/components/textScroll'
-                  },
+                  // {
+                  //   text:'文字滚动 TextScroll',link: '/guide/components/textScroll'
+                  // },
                   {
                     text:'按钮 Button',link: '/guide/components/button'
                   },
@@ -130,12 +136,16 @@ export default defineConfig({
                   // {
                   //   text:'对话框 Dialog',link: '/guide/components/dialog'
                   // },
-                  {
-                    text:'文字提示 Tooltip',link: '/guide/components/tooltip'
-                  },
+                  // {
+                  //   text:'文字提示 Tooltip',link: '/guide/components/tooltip'
+                  // },
                   {
                     text:'进度条 Progress',link: '/guide/components/progress'
                   },
+                  {
+                    text:'时间轴 Timeline',link: '/guide/components/timeline'
+                  },
+                
                   
                ]
               },

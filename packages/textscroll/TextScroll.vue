@@ -20,7 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
   width: '100%',
   height: 60,
   backgroundColor:  '#FFF',
-  amount: 4,
+  amount: 0,
   gap: 20,
   vertical: false,
   interval: 1500,
@@ -55,8 +55,6 @@ const getFPS = () =>{ // 获取屏幕刷新率
     */
     if (!start) {
       if (fpsRaf.value > 10) {
-       
-        
         start = timestamp
       }
       fpsRaf.value = requestAnimationFrame(timeElapse)
@@ -66,6 +64,8 @@ const getFPS = () =>{ // 获取屏幕刷新率
       fps.value = Math.floor(1000 / (timestamp - start))
       console.log('fps', fps.value)
       distance.value = getDistance() // 获取每列文字宽度
+    
+  
       onStart() // 开始滚动
     }
   }
@@ -74,6 +74,9 @@ const getFPS = () =>{ // 获取屏幕刷新率
   fpsRaf.value = requestAnimationFrame(timeElapse)
 }
 const getDistance= ():number =>{
+
+
+  
   return parseFloat((horizonRef.value.offsetWidth / props.amount).toFixed(2))
 }
 const moveLeft= ()=> {
@@ -82,7 +85,7 @@ const moveLeft= ()=> {
     left.value = 0
     
   } else {
-    
+  
     
     left.value += step.value // 每次移动step（px）
   }
@@ -116,7 +119,8 @@ const onStart= ()=> {
     }
   } else {
     if (textData.value.length > props.amount) { // 超过amount条开始滚动
-      moveRaf.value = requestAnimationFrame(moveLeft) // 开始动画
+      moveRaf.value = requestAnimationFrame(moveLeft) // 开始动画 
+      
     }
   }
 }

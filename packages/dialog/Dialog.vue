@@ -45,21 +45,21 @@ watch(
   }
 )
 const emits = defineEmits(['close', 'cancel', 'ok'])
-function onBlur () {
+const onBlur=()=>{
   if (!props.loading) {
     emits('close')
   }
 }
-function onFullScreen () {
+const onFullScreen=()=>{
   fullScreen.value = !fullScreen.value
 }
-function onClose () {
+const onClose=()=>{
   emits('close')
 }
-function onCancel () {
+const onCancel=()=>{
   emits('cancel')
 }
-function onConfirm () {
+const onConfirm=()=>{
   emits('ok')
 }
 </script>
